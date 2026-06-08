@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Marketer — One brief in, full campaign out</title>
+<meta name="description" content="Feed one brief. The AI Marketer returns ICP research, 72 emails, 90 hooks, ad copy, scripts and a VSL — generated in parallel, on-brand, in a single pipeline run.">
+<meta name="theme-color" content="#161616">
+
+<!-- ⚠️ DEPLOY TODO: set SITE_URL to the real marketing domain in the og:/canonical tags below (currently a placeholder). -->
+<link rel="canonical" href="https://taylor585.github.io/theaimarketer-landing/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The AI Marketer — Ship campaigns at machine speed">
+<meta property="og:description" content="One brief in, full campaign out. ICP research, 72 emails, 90 hooks, ad copy, scripts and a VSL — in a single run.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taylor585.github.io/theaimarketer-landing/">
+<meta property="og:site_name" content="The AI Marketer">
+<meta property="og:image" content="https://taylor585.github.io/theaimarketer-landing/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Marketer — Ship campaigns at machine speed">
+<meta name="twitter:description" content="One brief in, full campaign out — ICP research, 72 emails, 90 hooks, ad copy, scripts and a VSL in a single run.">
+<meta name="twitter:image" content="https://taylor585.github.io/theaimarketer-landing/assets/og-image.jpg">
+
+<!-- Favicons -->
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   The AI Marketer — Landing Page
+   Concept B (Modern Tech) · Brand pack v3.0 (Electric + Lime)
+   ============================================================ */
+:root{
+  --onyx:#161616; --panel:#1F1F1F; --panel-2:#202020;
+  --line:#2C2C2C; --mute:#8A8A8A; --mute-2:#a7a7a7; --cream:#F6F4F0;
+  --electric:#3D5AFE; --lime:#9EFF5B;
+  --radius-sm:8px; --radius-md:14px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-display);
+  background:var(--onyx); color:var(--cream);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  line-height:1.5;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* a11y: visible keyboard focus + skip link */
+:focus-visible{outline:2px solid var(--electric);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--electric);color:#fff;
+  padding:10px 16px;border-radius:0 0 var(--radius-sm) 0;font-family:var(--font-mono);font-size:13px}
+.skip:focus{left:0}
+
+/* mono eyebrow */
+.eyebrow{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--lime);
+  display:inline-flex; align-items:center; gap:10px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--lime)}
+.eyebrow.center{justify-content:center}
+.eyebrow.soon{color:var(--mute-2)}
+.eyebrow.soon::before{background:var(--mute-2)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-display);font-weight:600;font-size:15px;
+  padding:15px 28px;border-radius:var(--radius-sm);
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .25s var(--ease),background .25s var(--ease),border-color .25s var(--ease);
+}
+.btn.p{background:var(--electric);color:#fff}
+.btn.p:hover{transform:translateY(-2px);background:#5872ff}
+.btn.s{border-color:var(--line);color:var(--cream);background:transparent}
+.btn.s:hover{border-color:var(--electric);color:#fff}
+.btn.mono{font-family:var(--font-mono);font-weight:500;font-size:14px;letter-spacing:.02em}
+.btn.ghost{border-color:var(--line);color:var(--mute-2);background:transparent;cursor:default}
+
+/* =================== NAV =================== */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(22,22,22,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1200px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:30px}
+.brand b{font-weight:700;font-size:13px;letter-spacing:.14em}
+.nav .links{display:flex;gap:32px;font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+.nav .links a{transition:color .2s}
+.nav .links a:hover{color:var(--cream)}
+.nav .right{display:flex;align-items:center;gap:18px}
+.nav .signin{font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+.nav .signin:hover{color:var(--cream)}
+.nav-cta{border:1px solid var(--electric);color:var(--electric);padding:9px 18px;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:13px;transition:.2s}
+.nav-cta:hover{background:var(--electric);color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:var(--radius-sm);
+  color:var(--cream);width:42px;height:38px;font-size:18px;cursor:pointer;align-items:center;justify-content:center}
+
+/* mobile menu */
+.mobile-menu{display:none;flex-direction:column;gap:4px;padding:10px 20px 22px;
+  border-bottom:1px solid var(--line);background:var(--onyx);font-family:var(--font-mono);font-size:15px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 4px;color:var(--mute-2);border-bottom:1px solid var(--line)}
+.mobile-menu a:last-child{border-bottom:0}
+.mobile-menu a.cta{color:var(--electric)}
+
+/* =================== HERO =================== */
+.hero{padding:84px 0 70px}
+.hero .grid{display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:center}
+.hero h1{font-weight:700;font-size:72px;line-height:1.0;letter-spacing:-.03em;margin:24px 0 22px}
+.hero h1 span{color:var(--electric)}
+.hero .lead{font-family:var(--font-body);font-size:19px;line-height:1.6;color:#c2c2c2;max-width:500px}
+.hero .row{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.hero .meta{margin-top:30px;display:flex;gap:26px;font-family:var(--font-mono);font-size:12px;color:var(--mute-2);flex-wrap:wrap}
+.hero .meta b{color:var(--cream);font-weight:500}
+
+/* terminal */
+.term{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;font-family:var(--font-mono);font-size:13px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.term .bar{display:flex;align-items:center;gap:7px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#3a3a3a}
+.term .bar span{margin-left:12px;color:var(--mute-2);font-size:11px;letter-spacing:.08em}
+.term .body{padding:22px;line-height:2.0}
+.term .body .logo{height:38px;margin-bottom:16px}
+.c-lime{color:var(--lime)} .c-el{color:var(--electric)} .c-mute{color:var(--mute-2)}
+.tbar{height:6px;background:#2c2c2c;border-radius:3px;margin-top:4px;overflow:hidden}
+.tbar i{display:block;height:100%;background:var(--electric);border-radius:3px;animation:fill 2.6s var(--ease) infinite alternate}
+@keyframes fill{from{width:8%}to{width:72%}}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--electric);vertical-align:middle;animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.tbar i{animation:none;width:62%}.cursor{animation:none}}
+
+/* =================== STATS =================== */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+.stats .inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1200px;margin:0 auto}
+.stat{padding:34px 32px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--font-display);font-weight:700;font-size:40px;letter-spacing:-.02em;color:var(--cream)}
+.stat .n em{color:var(--electric);font-style:normal}
+.stat .l{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--mute-2);margin-top:6px;text-transform:uppercase}
+
+/* =================== SECTION SHELL =================== */
+section{padding:96px 0}
+.shead{max-width:680px;margin-bottom:54px}
+.shead.center{margin-left:auto;margin-right:auto;text-align:center}
+.shead h2{font-weight:700;font-size:44px;line-height:1.08;letter-spacing:-.025em;margin:18px 0 16px}
+.shead h2 span{color:var(--electric)}
+.shead p{font-family:var(--font-body);font-size:17px;line-height:1.6;color:#bdbdbd}
+
+/* =================== PIPELINE STEPS =================== */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pstep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;position:relative;transition:.3s var(--ease)}
+.pstep:hover{border-color:var(--electric);transform:translateY(-3px)}
+.pstep .idx{font-family:var(--font-mono);font-size:12px;color:var(--electric);letter-spacing:.1em}
+.pstep h3{font-size:18px;font-weight:600;margin:14px 0 8px}
+.pstep p{font-family:var(--font-body);font-size:14px;color:var(--mute-2);line-height:1.5}
+.pstep .par{position:absolute;top:22px;right:22px;font-family:var(--font-mono);font-size:10px;color:var(--lime);letter-spacing:.08em}
+
+/* =================== TOOLS GRID =================== */
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tool{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;transition:.3s var(--ease)}
+.tool:hover{border-color:var(--electric);transform:translateY(-3px)}
+.tool .tag{font-family:var(--font-mono);font-size:11px;color:var(--lime);letter-spacing:.1em;text-transform:lowercase}
+.tool h3{font-size:19px;font-weight:600;margin:12px 0 8px}
+.tool p{font-family:var(--font-body);font-size:14px;color:var(--mute-2);line-height:1.55}
+.section-panel{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* =================== TERMINAL ROOMS FEATURE =================== */
+.tr{background:linear-gradient(180deg,var(--onyx),#121212)}
+.tr .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.tr h2{font-weight:700;font-size:44px;line-height:1.08;letter-spacing:-.025em;margin:18px 0 18px}
+.tr h2 span{color:var(--electric)}
+.tr p{font-family:var(--font-body);font-size:17px;line-height:1.65;color:#bdbdbd;margin-bottom:14px}
+.tr ul{list-style:none;margin:24px 0 32px;display:grid;gap:12px}
+.tr li{font-family:var(--font-mono);font-size:14px;color:var(--cream);display:flex;gap:12px;align-items:flex-start}
+.tr li b{color:var(--lime)}
+.tr-term .body{line-height:1.95}
+.jarvis{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.soon-pill{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--lime);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-left:10px;vertical-align:middle}
+
+/* =================== HOW / STEPS ROW =================== */
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.howcard{padding:0 8px}
+.howcard .num{font-family:var(--font-mono);font-size:13px;color:var(--electric);letter-spacing:.1em}
+.howcard h3{font-size:22px;font-weight:600;margin:14px 0 10px}
+.howcard p{font-family:var(--font-body);font-size:15px;color:var(--mute-2);line-height:1.6}
+
+/* =================== PRICING TEASER =================== */
+.ptease{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;position:relative;transition:.3s var(--ease)}
+.tier.pop{border-color:var(--electric)}
+.tier:hover{transform:translateY(-3px)}
+.tier .pop-tag{position:absolute;top:-11px;left:30px;background:var(--electric);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.tier .name{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute-2)}
+.tier .price{font-weight:700;font-size:38px;letter-spacing:-.02em;margin:10px 0 2px}
+.tier .price span{font-size:15px;color:var(--mute-2);font-weight:500}
+.tier .who{font-family:var(--font-body);font-size:14px;color:var(--mute-2);min-height:38px;margin-bottom:14px}
+.tier ul{list-style:none;display:grid;gap:9px;margin-bottom:24px}
+.tier li{font-family:var(--font-body);font-size:14px;color:var(--cream);display:flex;gap:10px}
+.tier li b{color:var(--lime);font-weight:500}
+.tier .pick{display:block;text-align:center;padding:12px;border-radius:var(--radius-sm);font-weight:600;font-size:14px}
+.tier .pick.p{background:var(--electric);color:#fff}
+.tier .pick.s{border:1px solid var(--line);color:var(--cream)}
+.ptease-foot{text-align:center;margin-top:30px;font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+.ptease-foot a{color:#8aa0ff;text-decoration:underline;text-underline-offset:2px}
+
+/* =================== FAQ =================== */
+.faq{max-width:780px;margin:0 auto;display:grid;gap:12px}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:4px 22px}
+.faq summary{font-weight:600;font-size:17px;padding:18px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--electric);font-family:var(--font-mono);font-size:20px;transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{font-family:var(--font-body);font-size:15px;line-height:1.65;color:var(--mute-2);padding:0 0 20px}
+
+/* =================== CTA BAND =================== */
+.cta-band{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:64px;text-align:center}
+.cta-band h2{font-weight:700;font-size:48px;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px}
+.cta-band h2 span{color:var(--electric)}
+.cta-band p{font-family:var(--font-body);font-size:18px;color:#bdbdbd;max-width:520px;margin:0 auto 32px}
+.cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-band .codenote{margin-top:22px;font-family:var(--font-mono);font-size:12px;color:var(--mute-2)}
+.cta-band .codenote b{color:var(--lime)}
+
+/* =================== FOOTER =================== */
+footer{border-top:1px solid var(--line);padding:48px 0 40px}
+footer .inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .brand img{height:26px}
+footer .fl{display:flex;gap:28px;font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+footer .fl a:hover{color:var(--cream)}
+footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margin-top:20px}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* =================== SEE INSIDE (live screenshots) =================== */
+.inside{background:linear-gradient(180deg,#121212,var(--onyx))}
+.frame{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.frame .chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:#191919}
+.frame .chrome i{width:10px;height:10px;border-radius:50%;background:#3a3a3a}
+.frame .chrome .url{margin-left:10px;flex:1;font-family:var(--font-mono);font-size:11px;color:var(--mute-2);background:#111;border:1px solid var(--line);border-radius:6px;padding:4px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame img{width:100%;height:auto;display:block;aspect-ratio:1400/875}
+.frame video.demo{width:100%;height:auto;display:block;aspect-ratio:1100/584;background:#0c0c0c}
+.frame.live{position:relative}
+.frame.live .livetag{position:absolute;top:52px;right:14px;z-index:2;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);background:rgba(22,22,22,.7);border:1px solid var(--line);border-radius:999px;padding:3px 9px;display:flex;align-items:center;gap:6px}
+.frame.live .livetag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 var(--lime);animation:pulse 1.8s var(--ease) infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(158,255,91,.5)}70%{box-shadow:0 0 0 7px rgba(158,255,91,0)}100%{box-shadow:0 0 0 0 rgba(158,255,91,0)}}
+@media(prefers-reduced-motion:reduce){.frame.live .livetag::before{animation:none}}
+.showcase{display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center;margin-bottom:64px}
+.showcase h3{font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1.1;margin:16px 0 14px}
+.showcase h3 span{color:var(--electric)}
+.showcase p{font-family:var(--font-body);font-size:16px;line-height:1.65;color:#bdbdbd;margin-bottom:14px}
+.showcase ul{list-style:none;display:grid;gap:10px;margin-top:18px}
+.showcase li{font-family:var(--font-mono);font-size:13px;color:var(--cream);display:flex;gap:10px}
+.showcase li b{color:var(--lime)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gcard{display:flex;flex-direction:column;gap:12px;transition:transform .3s var(--ease)}
+.gcard:hover{transform:translateY(-4px)}
+.gcard .cap .k{font-family:var(--font-mono);font-size:11px;color:var(--lime);letter-spacing:.08em}
+.gcard .cap .t{font-size:15px;font-weight:600;margin-top:3px}
+.gcard .cap .d{font-family:var(--font-body);font-size:13px;color:var(--mute-2);margin-top:3px;line-height:1.45}
+
+/* =================== RESPONSIVE =================== */
+@media(max-width:980px){
+  .hero .grid{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:54px}
+  .tr .grid{grid-template-columns:1fr;gap:36px}
+  .tools{grid-template-columns:repeat(2,1fr)}
+  .pipe{grid-template-columns:repeat(2,1fr)}
+  .ptease{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .stats .inner{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat{border-bottom:1px solid var(--line)}
+  .how{grid-template-columns:1fr}
+  .showcase{grid-template-columns:1fr;gap:32px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:920px){
+  /* collapse the full nav to the hamburger before the links can collide */
+  .nav .links{display:none}
+  .nav .signin{display:none}
+  .burger{display:inline-flex}
+}
+@media(max-width:620px){
+  .wrap{padding:0 20px}
+  .hero h1{font-size:42px}
+  .shead h2{font-size:34px}
+  .tr h2,.cta-band h2{font-size:34px}
+  .tools{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .pipe{grid-template-columns:1fr}
+  .stats .inner{grid-template-columns:1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--line)}
+  .cta-band{padding:40px 24px}
+  .nav .inner{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="inner">
+    <a class="brand" href="#top" aria-label="The AI Marketer — home">
+      <img src="assets/aimarketer-monogram-reversed.png" alt="" width="25" height="30">
+      <b>THE AI MARKETER</b>
+    </a>
+    <div class="links">
+      <a href="#pipeline">pipeline</a>
+      <a href="#inside">see_inside</a>
+      <a href="#tools">tools</a>
+      <a href="#terminal-rooms">terminal_rooms</a>
+      <a href="#pricing">pricing</a>
+    </div>
+    <div class="right">
+      <a class="signin" href="https://theaimarketerr.lovable.app/auth">sign in</a>
+      <a class="nav-cta" href="https://theaimarketerr.lovable.app/auth">$ start_free</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">≡</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#pipeline">pipeline</a>
+    <a href="#inside">see_inside</a>
+    <a href="#tools">tools</a>
+    <a href="#terminal-rooms">terminal_rooms</a>
+    <a href="#pricing">pricing</a>
+    <a href="https://theaimarketerr.lovable.app/auth">sign in</a>
+    <a class="cta" href="https://theaimarketerr.lovable.app/auth">$ start_free</a>
+  </div>
+</nav>
+
+<span id="top"></span>
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">one brief in · full campaign out</div>
+      <h1>Ship campaigns at <span>machine</span> speed.</h1>
+      <p class="lead">Feed one client brief. The pipeline returns ICP research, 72 emails, 90 hooks, ad copy, static-image copy, video scripts, disclaimers and a VSL — generated in parallel, on-brand, in a single run.</p>
+      <div class="row">
+        <a class="btn p" href="https://theaimarketerr.lovable.app/auth">Launch a campaign →</a>
+        <a class="btn s" href="#pipeline">View the pipeline</a>
+      </div>
+      <div class="meta">
+        <span><b>8-step</b> pipeline</span>
+        <span><b>11</b> generators</span>
+        <span><b>1</b> run</span>
+        <span><b>+</b> Terminal Rooms</span>
+      </div>
+    </div>
+
+    <div class="term reveal">
+      <div class="bar"><i></i><i></i><i></i><span>the_ai_marketer · live pipeline</span></div>
+      <div class="body">
+        <img class="logo" src="assets/aimarketer-monogram-reversed.png" alt="" width="31" height="38">
+        <div><span class="c-lime">✓</span> icp_research <span class="c-mute">··········</span> <span class="c-lime">done</span></div>
+        <div><span class="c-lime">✓</span> hooks.generate(90) <span class="c-mute">···</span> <span class="c-lime">done</span></div>
+        <div><span class="c-el">▶</span> emails.sequence <span class="c-mute">04/72</span><div class="tbar"><i></i></div></div>
+        <div><span class="c-el">▶</span> video_scripts <span class="c-mute">running</span></div>
+        <div><span class="c-el">▶</span> ad_copy + static_images <span class="c-mute">running</span></div>
+        <div><span class="c-mute">◌ disclaimers ········· queued</span></div>
+        <div><span class="c-mute">◌ vsl_script ·········· queued</span> <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="inner">
+    <div class="stat reveal"><div class="n"><em>72</em></div><div class="l">emails / run</div></div>
+    <div class="stat reveal"><div class="n"><em>90</em></div><div class="l">hooks / run</div></div>
+    <div class="stat reveal"><div class="n"><em>8</em></div><div class="l">parallel steps</div></div>
+    <div class="stat reveal"><div class="n">1<em>×</em></div><div class="l">VSL + disclaimers</div></div>
+  </div>
+</div>
+
+<!-- ============ PIPELINE ============ -->
+<section id="pipeline">
+  <div class="wrap">
+    <div class="shead">
+      <div class="eyebrow">the launchpad</div>
+      <h2>One pipeline. <span>Eight steps.</span> A full marketing suite.</h2>
+      <p>ICP research runs first. The moment it lands, steps 2–8 fire <b style="color:var(--lime)">in parallel</b> — so the whole suite finishes in the time of the slowest single generator, not the sum of all eight.</p>
+    </div>
+    <div class="pipe">
+      <div class="pstep reveal"><div class="idx">step_01</div><h3>ICP Research</h3><p>Reddit-grounded ideal-customer profile via Manus AI — async, webhook-driven.</p></div>
+      <div class="pstep reveal"><div class="idx">step_02</div><span class="par">∥ parallel</span><h3>90 Hooks</h3><p>Ninety scroll-stopping hooks tuned to the ICP's pains and desires.</p></div>
+      <div class="pstep reveal"><div class="idx">step_03</div><span class="par">∥ parallel</span><h3>Video Scripts</h3><p>Short-form scripts ready to shoot, structured for retention.</p></div>
+      <div class="pstep reveal"><div class="idx">step_04</div><span class="par">∥ parallel</span><h3>Ad Copy</h3><p>Paid-ad copy across angles, formatted per platform.</p></div>
+      <div class="pstep reveal"><div class="idx">step_05</div><span class="par">∥ parallel</span><h3>Static Image Copy</h3><p>On-image copy + creative direction for static ads.</p></div>
+      <div class="pstep reveal"><div class="idx">step_06</div><span class="par">∥ parallel</span><h3>Email Sequences</h3><p>72 emails — four sequences of eighteen — across the full journey.</p></div>
+      <div class="pstep reveal"><div class="idx">step_07</div><span class="par">∥ parallel</span><h3>Disclaimers</h3><p>Compliance-ready legal disclaimers matched to the offer.</p></div>
+      <div class="pstep reveal"><div class="idx">step_08</div><span class="par">∥ parallel</span><h3>VSL Script</h3><p>A high-converting video sales letter, start to close.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEE INSIDE ============ -->
+<section id="inside" class="inside">
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">see inside</div>
+      <h2>This is what you get <span>before you log in</span>.</h2>
+      <p>Real screens from the product — the live engine and every tool, exactly as you'll use them.</p>
+    </div>
+
+    <div class="showcase">
+      <div class="reveal">
+        <div class="eyebrow">// the engine</div>
+        <h3>Watch eight generators run <span>at once</span>.</h3>
+        <p>When you launch a campaign, the Client Launchpad fans out the whole suite in parallel. This is the live progress view — every generator orbiting a single run, filling in as it completes.</p>
+        <ul>
+          <li><b>▸</b> ICP · 90 hooks · emails · ad copy · static · video · disclaimers · VSL</li>
+          <li><b>▸</b> One brief in — a full, on-brand campaign out</li>
+          <li><b>▸</b> ~15–20 minutes, not days</li>
+        </ul>
+      </div>
+      <div class="frame live reveal">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/content-pipeline</span></div>
+        <span class="livetag">live run</span>
+        <video class="demo" poster="assets/clips/orbit-poster.jpg" muted loop playsinline preload="none"
+               width="1100" height="584" aria-label="The AI Marketer pipeline running — eight generators orbiting a live progress ring, filling in as each completes">
+          <source src="assets/clips/orbit.webm" type="video/webm">
+          <source src="assets/clips/orbit.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/content-pipeline</span></div><img src="assets/shots/launchpad-populated.webp" width="1400" height="875" alt="Client Launchpad screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// client_launchpad</div><div class="t">One brief, eight outputs</div><div class="d">Drop a client in and launch the entire 8-step pipeline in a single click.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/dashboard</span></div><img src="assets/shots/dashboard.webp" width="1400" height="875" alt="Dashboard screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// dashboard</div><div class="t">Your whole toolkit, one place</div><div class="d">Every generator on a single dark, on-brand workspace.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/email-creator</span></div><img src="assets/shots/email-creator.webp" width="1400" height="875" alt="Email Creator screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// email_creator</div><div class="t">72 emails, 4 sequences</div><div class="d">Full welcome, nurture, launch and re-engage flows in one pass.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/90-hooks</span></div><img src="assets/shots/ninety-hooks.webp" width="1400" height="875" alt="90 Hooks screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// 90_hooks</div><div class="t">90 hooks, ready to test</div><div class="d">A wall of openers tuned to your ICP across every channel.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/ad-copy-generator</span></div><img src="assets/shots/ad-copy.webp" width="1400" height="875" alt="Ad Copy Generator screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// ad_copy</div><div class="t">Multi-angle ad copy</div><div class="d">Ten ad variations with hooks and CTAs, formatted per platform.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/high-converting-vsl</span></div><img src="assets/shots/vsl.webp" width="1400" height="875" alt="High-Converting VSL screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// vsl</div><div class="t">High-converting VSL</div><div class="d">A full video sales letter script built on a proven structure.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/reddit-icp-research</span></div><img src="assets/shots/reddit-icp.webp" width="1400" height="875" alt="Reddit ICP Research screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// reddit_icp</div><div class="t">Reddit-grounded ICP</div><div class="d">Mine real customer language, pains and objections before you write.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/video-script-creator</span></div><img src="assets/shots/video-scripts.webp" width="1400" height="875" alt="Video Script Creator screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// video_scripts</div><div class="t">Short-form video scripts</div><div class="d">Hook-to-CTA scripts engineered for retention.</div></div>
+      </div>
+      <div class="gcard reveal">
+        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/master-ai-rules</span></div><img src="assets/shots/master-ai-rules.webp" width="1400" height="875" alt="Master AI Rules screen" loading="lazy"></div>
+        <div class="cap"><div class="k">// master_ai_rules</div><div class="t">Stays on-brand, every time</div><div class="d">Quality control and master rules every tool must follow.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section id="tools" class="section-panel">
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">the toolkit</div>
+      <h2>Every generator, <span>standalone</span> too.</h2>
+      <p>Run the whole pipeline — or open any tool on its own. Each is a focused, on-brand generator with its own workspace.</p>
+    </div>
+    <div class="tools">
+      <div class="tool reveal"><div class="tag">// reddit_icp</div><h3>ICP Research</h3><p>Mine Reddit for real customer language, pains and objections to ground every asset.</p></div>
+      <div class="tool reveal"><div class="tag">// 90_hooks</div><h3>90 Hooks</h3><p>A wall of openers ranked and ready to test across channels.</p></div>
+      <div class="tool reveal"><div class="tag">// email_creator</div><h3>Email Creator</h3><p>72 emails in four full sequences — welcome, nurture, launch, re-engage.</p></div>
+      <div class="tool reveal"><div class="tag">// ad_copy</div><h3>Ad Copy Generator</h3><p>Multi-angle paid copy formatted for Meta, Google and beyond.</p></div>
+      <div class="tool reveal"><div class="tag">// static_image</div><h3>Static Image Copy + Creator</h3><p>On-image copy plus generated creative for static ad sets.</p></div>
+      <div class="tool reveal"><div class="tag">// video_scripts</div><h3>Video Script Creator</h3><p>Hook-to-CTA scripts engineered for short-form retention.</p></div>
+      <div class="tool reveal"><div class="tag">// vsl</div><h3>High-Converting VSL</h3><p>A full video sales letter script built on a proven structure.</p></div>
+      <div class="tool reveal"><div class="tag">// disclaimers</div><h3>Disclaimers</h3><p>Compliance-ready legal language matched to the offer and niche.</p></div>
+      <div class="tool reveal"><div class="tag">// knowledge_base</div><h3>Knowledge Base + QC</h3><p>Client assets, quality control and Master AI Rules keep output on-brand.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMINAL ROOMS FEATURE ============ -->
+<section id="terminal-rooms" class="tr">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow soon">coming soon · live terminal</div>
+      <h2>Terminal Rooms <span>+ Jarvis</span></h2>
+      <p>The next layer: a real, interactive terminal inside The AI Marketer. Spawn live OS shells, run commands, and pair with <b style="color:var(--lime)">Jarvis</b> — a voice-and-text agent with persistent memory. Rolling out to <b style="color:var(--lime)">Agency</b> plans first.</p>
+      <ul>
+        <li><b>▸</b> Real shells via node-pty over a live WebSocket.</li>
+        <li><b>▸</b> Jarvis: voice + text agent, session &amp; memory persisted.</li>
+        <li><b>▸</b> Safety gate on every command before it runs.</li>
+        <li><b>▸</b> Fully in-brand — Electric/Lime, Space Grotesk + Plex Mono.</li>
+      </ul>
+      <div class="row" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn p" href="https://theaimarketerr.lovable.app/auth">Get early access →</a>
+        <span class="btn ghost">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="term tr-term reveal">
+      <div class="bar"><i></i><i></i><i></i><span>the_ai_marketer · live terminal <span class="soon-pill">preview</span></span></div>
+      <div class="body">
+        <div><span class="c-lime">$</span> session.spawn <span class="c-mute">shell=zsh · model=grok-4.3</span></div>
+        <div><span class="c-el">▶</span> pty connected <span class="c-mute">·····</span> <span class="c-lime">ws: live</span></div>
+        <div><span class="c-mute">~/the-ai-marketer $</span> run campaign --client acme</div>
+        <div><span class="c-lime">✓</span> safety_gate <span class="c-mute">·······</span> <span class="c-lime">passed</span></div>
+        <div class="jarvis">
+          <div><span class="c-el">jarvis</span> <span class="c-mute">»</span> memory loaded · 142 notes</div>
+          <div><span class="c-el">jarvis</span> <span class="c-mute">»</span> ready when you are <span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section>
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">how it works</div>
+      <h2>Brief to suite in <span>three moves</span>.</h2>
+    </div>
+    <div class="how">
+      <div class="howcard reveal"><div class="num">01</div><h3>Drop the brief</h3><p>Add the client, offer and any assets. The system reads them and builds the working context.</p></div>
+      <div class="howcard reveal"><div class="num">02</div><h3>Run the pipeline</h3><p>ICP research goes first; every generator then fires in parallel. Watch it stream in the live console.</p></div>
+      <div class="howcard reveal"><div class="num">03</div><h3>Ship the campaign</h3><p>Review, refine in any tool, and export a complete, on-brand marketing suite ready to launch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING TEASER ============ -->
+<section id="pricing" class="section-panel">
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">pricing</div>
+      <h2>Plans that scale with <span>your roster</span>.</h2>
+      <p>Start with the standalone generators, move up to one-click pipelines, or run a whole agency with Terminal Rooms.</p>
+    </div>
+    <div class="ptease">
+      <div class="tier reveal">
+        <div class="name">Starter</div>
+        <div class="price">£99<span> /mo</span></div>
+        <div class="who">For solo marketers getting started.</div>
+        <ul>
+          <li><b>›</b> All 11 standalone generators</li>
+          <li><b>›</b> Manual ICP — paste your own research</li>
+          <li><b>›</b> 3 client profiles · 1 seat</li>
+          <li><b>›</b> Knowledge Base + Quality Control</li>
+        </ul>
+        <a class="pick s" href="https://theaimarketerr.lovable.app/auth">Get Starter →</a>
+      </div>
+      <div class="tier pop reveal">
+        <div class="pop-tag">most popular</div>
+        <div class="name">Studio</div>
+        <div class="price">£299<span> /mo</span></div>
+        <div class="who">Where most agencies start.</div>
+        <ul>
+          <li><b>›</b> One-click 8-step campaign pipeline</li>
+          <li><b>›</b> Automated Reddit ICP via Manus AI</li>
+          <li><b>›</b> 30 launches/mo · 400 AI images/mo</li>
+          <li><b>›</b> 25 client profiles · 3 seats</li>
+        </ul>
+        <a class="pick p" href="https://theaimarketerr.lovable.app/auth">Get Studio →</a>
+      </div>
+      <div class="tier reveal">
+        <div class="name">Agency</div>
+        <div class="price">£799<span> /mo</span></div>
+        <div class="who">Everything, plus live Terminal Rooms.</div>
+        <ul>
+          <li><b>›</b> Everything in Studio</li>
+          <li><b>›</b> Live Terminal Rooms + Jarvis</li>
+          <li><b>›</b> Unlimited launches, images &amp; clients</li>
+          <li><b>›</b> 10 seats · white-label · priority</li>
+        </ul>
+        <a class="pick s" href="https://theaimarketerr.lovable.app/auth">Get Agency →</a>
+      </div>
+    </div>
+    <div class="ptease-foot">Annual billing saves ~2 months · <a href="pricing.html">See full pricing →</a></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">faq</div>
+      <h2>Questions, <span>answered</span>.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>What exactly do I get from one run?</summary><p>One brief produces a full marketing suite: Reddit-grounded ICP research, 90 hooks, 72 emails (four sequences), ad copy, static-image copy, video scripts, legal disclaimers and a VSL script — all generated in parallel and kept on-brand.</p></details>
+      <details><summary>How long does a campaign take?</summary><p>Typically ~15–20 minutes end-to-end. ICP research runs first; the moment it lands, the other seven generators fire at once, so the run finishes in the time of the slowest single step — not the sum of all of them.</p></details>
+      <details><summary>Do I have to run the whole pipeline?</summary><p>No. Every generator also works standalone — open just the Email Creator, 90 Hooks, Ad Copy or any other tool on its own whenever you only need one asset.</p></details>
+      <details><summary>What is Terminal Rooms?</summary><p>An interactive terminal inside the product, paired with Jarvis — a voice-and-text agent with persistent memory. It spawns real OS shells behind a safety gate. It's rolling out to Agency plans first.</p></details>
+      <details><summary>How does it stay on-brand?</summary><p>Your Knowledge Base, Quality Control examples and Master AI Rules are applied to every generator, so output matches your client's voice and compliance needs across the whole suite.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section id="start">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="eyebrow center">$ start_free</div>
+      <h2 style="margin-top:16px">Launch your next client <span>in one run</span>.</h2>
+      <p>Create your account and put a full, on-brand campaign on the table today.</p>
+      <div class="row">
+        <a class="btn p" href="https://theaimarketerr.lovable.app/auth">Start free →</a>
+        <a class="btn s mono" href="#pricing">$ see_pricing</a>
+      </div>
+      <div class="codenote">Built for agencies · launch a client in a single run</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="inner">
+      <a class="brand" href="#top" aria-label="The AI Marketer — home"><img src="assets/aimarketer-logo-reversed-white.png" alt="The AI Marketer" width="26" height="26"></a>
+      <div class="fl">
+        <a href="#pipeline">pipeline</a>
+        <a href="#tools">tools</a>
+        <a href="#pricing">pricing</a>
+        <a href="#terminal-rooms">terminal_rooms</a>
+        <a href="https://theaimarketerr.lovable.app/auth">sign_in</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 The AI Marketer · one brief in · full campaign out</div>
+  </div>
+</footer>
+
+<script>
+/* Mobile menu toggle */
+(function(){
+  var b = document.getElementById('burger'), m = document.getElementById('mobile-menu');
+  if (b && m){
+    b.addEventListener('click', function(){
+      var open = m.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      b.textContent = open ? '×' : '≡';
+    });
+    m.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); b.textContent='≡'; });
+    });
+  }
+})();
+
+/* Scroll-reveal (progressive enhancement — content is visible without JS) */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('in'); el.style.transition='none'; });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function(el,i){ el.style.transitionDelay = (i%4*60)+'ms'; io.observe(el); });
+})();
+
+/* Demo videos — lazy-load + play only while on screen; static poster if reduced-motion */
+(function(){
+  var vids = document.querySelectorAll('video.demo');
+  if (!vids.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return; // poster image stays
+  var vio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting){
+        if (v.preload === 'none'){ v.preload = 'auto'; v.load(); }
+        var p = v.play(); if (p && p.catch) p.catch(function(){});
+      } else { v.pause(); }
+    });
+  }, { threshold: 0.35 });
+  vids.forEach(function(v){ vio.observe(v); });
+})();
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.mobile-menu{display:none!important}</style></noscript>
+</body>
+</html>

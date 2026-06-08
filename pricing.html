@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Marketer — Pricing</title>
+<meta name="description" content="Three plans for marketing agencies. Starter for the toolkit, Studio for the one-click pipeline, Agency for the full suite plus live Terminal Rooms + Jarvis.">
+
+<meta name="theme-color" content="#161616">
+
+<!-- Favicons -->
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The AI Marketer — Pricing">
+<meta property="og:description" content="Starter, Studio, Agency. From the standalone toolkit to the full one-click campaign pipeline and live Terminal Rooms.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://taylor585.github.io/theaimarketer-landing/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://taylor585.github.io/theaimarketer-landing/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   The AI Marketer — Pricing Page
+   Concept B (Modern Tech) · Brand tokens v2.0 · sibling of index.html
+   ============================================================ */
+:root{
+  --onyx:#161616; --panel:#1F1F1F; --panel-2:#202020;
+  --line:#2C2C2C; --mute:#8A8A8A; --mute-2:#a7a7a7; --cream:#F6F4F0;
+  --electric:#3D5AFE; --lime:#9EFF5B;
+  --radius-sm:8px; --radius-md:14px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-display);
+  background:var(--onyx); color:var(--cream);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  line-height:1.5;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* a11y: visible keyboard focus + skip link + sr-only */
+:focus-visible{outline:2px solid var(--electric);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--electric);color:#fff;
+  padding:10px 16px;border-radius:0 0 var(--radius-sm) 0;font-family:var(--font-mono);font-size:13px}
+.skip:focus{left:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* mono eyebrow */
+.eyebrow{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--lime);
+  display:inline-flex; align-items:center; gap:10px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--lime)}
+.eyebrow.center{justify-content:center}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--font-display);font-weight:600;font-size:15px;
+  padding:15px 28px;border-radius:var(--radius-sm);
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .25s var(--ease),background .25s var(--ease),border-color .25s var(--ease);
+}
+.btn.p{background:var(--electric);color:#fff}
+.btn.p:hover{transform:translateY(-2px);background:#5872ff}
+.btn.s{border-color:var(--line);color:var(--cream);background:transparent}
+.btn.s:hover{border-color:var(--electric);color:#fff}
+.btn.mono{font-family:var(--font-mono);font-weight:500;font-size:14px;letter-spacing:.02em}
+.btn.full{width:100%}
+
+/* =================== NAV =================== */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(22,22,22,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1200px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:30px}
+.brand b{font-weight:700;font-size:13px;letter-spacing:.14em}
+.nav .links{display:flex;gap:32px;font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+.nav .links a{transition:color .2s}
+.nav .links a:hover,.nav .links a.active{color:var(--cream)}
+.nav .right{display:flex;align-items:center;gap:18px}
+.nav .signin{font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+.nav .signin:hover{color:var(--cream)}
+.nav-cta{border:1px solid var(--electric);color:#8aa0ff;padding:9px 18px;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:13px;transition:.2s}
+.nav-cta:hover{background:var(--electric);color:#fff}
+
+/* =================== PRICING HEADER =================== */
+.phead{padding:84px 0 8px;text-align:center}
+.phead h1{font-weight:700;font-size:60px;line-height:1.02;letter-spacing:-.03em;margin:22px 0 18px}
+.phead h1 span{color:var(--electric)}
+.phead .lead{font-family:var(--font-body);font-size:18px;line-height:1.6;color:#b8b8b8;max-width:560px;margin:0 auto}
+
+/* billing toggle */
+.toggle{display:inline-flex;align-items:center;gap:14px;margin:34px auto 0;font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+.toggle button{
+  background:var(--panel);border:1px solid var(--line);color:var(--mute-2);
+  font-family:var(--font-mono);font-size:13px;padding:8px 16px;border-radius:99px;cursor:pointer;transition:.2s;
+}
+.toggle .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:4px;gap:4px}
+.toggle .seg button{border:0;border-radius:99px;padding:8px 18px}
+.toggle .seg button.on{background:var(--electric);color:#fff}
+.toggle .save{color:var(--lime)}
+
+/* =================== PLAN CARDS =================== */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;align-items:stretch}
+.plan{
+  display:flex;flex-direction:column;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-md);padding:32px 30px;position:relative;
+  transition:.3s var(--ease);
+}
+.plan:hover{transform:translateY(-3px);border-color:#3a3a3a}
+.plan.feat{border-color:var(--electric);box-shadow:0 24px 70px rgba(61,90,254,.14)}
+.plan .flag{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--electric);color:#fff;font-family:var(--font-mono);
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 14px;border-radius:99px;white-space:nowrap;
+}
+.plan .tag{font-family:var(--font-mono);font-size:12px;color:#8aa0ff;letter-spacing:.12em;text-transform:lowercase}
+.plan h3{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:12px 0 4px}
+.plan .role{font-family:var(--font-body);font-size:14px;color:var(--mute-2);min-height:40px}
+.plan .price{display:flex;align-items:flex-end;gap:6px;margin:22px 0 4px}
+.plan .price .amt{font-family:var(--font-display);font-weight:700;font-size:46px;letter-spacing:-.02em;line-height:1}
+.plan .price .per{font-family:var(--font-mono);font-size:13px;color:var(--mute-2);margin-bottom:7px}
+.plan .billed{font-family:var(--font-mono);font-size:12px;color:var(--mute-2);min-height:18px}
+.plan .cta-wrap{margin:24px 0 26px}
+.plan ul{list-style:none;display:grid;gap:13px;margin-top:auto}
+.plan li{font-family:var(--font-body);font-size:14px;color:var(--cream);display:flex;gap:11px;align-items:flex-start;line-height:1.5}
+.plan li .ck{color:var(--electric);font-family:var(--font-mono);flex:0 0 auto;margin-top:1px}
+.plan li.off{color:var(--mute-2)}
+.plan li.off .ck{color:#4a4a4a}
+.plan li b{font-weight:600}
+.plan .divider{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute-2);margin:24px 0 4px}
+
+/* =================== SECTION SHELL =================== */
+section{padding:96px 0}
+.shead{max-width:680px;margin-bottom:46px}
+.shead.center{margin-left:auto;margin-right:auto;text-align:center}
+.shead h2{font-weight:700;font-size:40px;line-height:1.08;letter-spacing:-.025em;margin:18px 0 16px}
+.shead h2 span{color:var(--electric)}
+.shead p{font-family:var(--font-body);font-size:17px;line-height:1.6;color:#aaa}
+
+/* =================== COMPARISON TABLE =================== */
+.cmp{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.table{width:100%;border-collapse:collapse;font-size:14px}
+.table th,.table td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.table thead th{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--mute-2);text-transform:uppercase;vertical-align:bottom}
+.table thead th.col{text-align:center;color:var(--cream);font-size:15px;letter-spacing:0;text-transform:none}
+.table thead th.col .cprice{display:block;font-family:var(--font-mono);font-size:12px;color:var(--mute-2);margin-top:4px;font-weight:400}
+.table thead th.featcol{color:var(--electric)}
+.table td.feat-name{font-family:var(--font-body);color:var(--cream);font-weight:500}
+.table td.val{text-align:center;font-family:var(--font-mono);color:var(--cream)}
+.table td.val.muted{color:var(--mute-2)}
+.table .ck{color:var(--electric)}
+.table .x{color:#4a4a4a}
+.table tr.group td{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute-2);background:#1a1a1a;padding-top:22px;padding-bottom:10px}
+.table tbody tr:hover td{background:rgba(61,90,254,.04)}
+
+/* =================== FAQ =================== */
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.qa{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px}
+.qa h3{font-size:17px;font-weight:600;margin-bottom:10px}
+.qa p{font-family:var(--font-body);font-size:14px;color:var(--mute-2);line-height:1.6}
+.qa p b{color:var(--cream);font-weight:500}
+
+/* =================== CTA BAND =================== */
+.cta-band{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:64px;text-align:center}
+.cta-band h2{font-weight:700;font-size:46px;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px}
+.cta-band h2 span{color:var(--electric)}
+.cta-band p{font-family:var(--font-body);font-size:18px;color:#aaa;max-width:520px;margin:0 auto 32px}
+.cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* =================== FOOTER =================== */
+footer{border-top:1px solid var(--line);padding:48px 0 40px}
+footer .inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .brand img{height:26px}
+footer .fl{display:flex;gap:28px;font-family:var(--font-mono);font-size:13px;color:var(--mute-2)}
+footer .fl a:hover{color:var(--cream)}
+footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margin-top:20px}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* =================== RESPONSIVE =================== */
+@media(max-width:980px){
+  .phead h1{font-size:46px}
+  .plans{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}
+  .plan.feat{order:-1}
+  .faq{grid-template-columns:1fr}
+  /* table → horizontal scroll */
+  .cmp .wrap{overflow-x:auto}
+  .table{min-width:680px}
+}
+@media(max-width:620px){
+  .wrap{padding:0 20px}
+  .nav .links{display:none}
+  .nav .signin{display:none}
+  .phead h1{font-size:38px}
+  .shead h2{font-size:30px}
+  .cta-band h2{font-size:32px}
+  .cta-band{padding:40px 24px}
+  .nav .inner{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="inner">
+    <a class="brand" href="index.html#top">
+      <img src="assets/aimarketer-monogram-reversed.png" alt="The AI Marketer">
+      <b>THE AI MARKETER</b>
+    </a>
+    <div class="links">
+      <a href="index.html#pipeline">pipeline</a>
+      <a href="index.html#tools">tools</a>
+      <a href="index.html#terminal-rooms">terminal_rooms</a>
+      <a href="pricing.html" class="active">pricing</a>
+    </div>
+    <div class="right">
+      <a class="signin" data-app="signin" href="https://theaimarketerr.lovable.app/auth">sign in</a>
+      <a class="nav-cta" data-app="signup" href="https://theaimarketerr.lovable.app/auth">$ get_started</a>
+    </div>
+  </div>
+</nav>
+
+<span id="top"></span>
+<main id="main">
+
+<!-- ============ PRICING HEADER ============ -->
+<header class="phead">
+  <div class="wrap">
+    <div class="eyebrow center">pricing · per agency · per month</div>
+    <h1>Three plans. One <span>campaign engine</span>.</h1>
+    <p class="lead">Start with the full toolkit, scale into the one-click pipeline, and unlock live Terminal Rooms on Agency. Every plan is built to put a complete, on-brand campaign on the table.</p>
+
+    <div class="toggle">
+      <span>billing</span>
+      <span class="seg">
+        <button id="bm" class="on" onclick="setBilling('mo')">monthly</button>
+        <button id="by" onclick="setBilling('yr')">annual</button>
+      </span>
+      <span class="save">// 2 months free</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PLAN CARDS ============ -->
+<section style="padding-top:0" aria-labelledby="plans-heading">
+  <div class="wrap">
+    <h2 id="plans-heading" class="sr-only">Pricing plans</h2>
+    <div class="plans">
+
+      <!-- STARTER -->
+      <div class="plan reveal">
+        <div class="tag">// starter</div>
+        <h3>Starter</h3>
+        <div class="role">The full toolkit. Every generator, on its own terms.</div>
+        <div class="price">
+          <span class="amt" data-mo="£99" data-yr="£82">£99</span>
+          <span class="per">/ mo</span>
+        </div>
+        <div class="billed" data-mo="billed monthly" data-yr="£990 billed yearly">billed monthly</div>
+        <div class="cta-wrap">
+          <a class="btn s full" data-app="signup" data-plan="starter" href="https://theaimarketerr.lovable.app/auth">Choose Starter</a>
+        </div>
+        <div class="divider">what's included</div>
+        <ul>
+          <li><span class="ck">✓</span> <span>All <b>11 standalone generators</b> — hooks, emails, ad copy, scripts, VSL, disclaimers</span></li>
+          <li><span class="ck">✓</span> <span><b>Manual ICP</b> — paste your own research to ground every asset</span></li>
+          <li><span class="ck">✓</span> <span>72 emails · 90 hooks · VSL per generation</span></li>
+          <li><span class="ck">✓</span> <span>Knowledge Base + Quality Control</span></li>
+          <li><span class="ck">✓</span> <span><b>3</b> client profiles · <b>1</b> seat</span></li>
+          <li class="off"><span class="ck">—</span> <span>One-click auto-pipeline</span></li>
+          <li class="off"><span class="ck">—</span> <span>AI image generation</span></li>
+          <li class="off"><span class="ck">—</span> <span>Terminal Rooms + Jarvis</span></li>
+        </ul>
+      </div>
+
+      <!-- STUDIO (featured) -->
+      <div class="plan feat reveal">
+        <div class="flag">most popular</div>
+        <div class="tag">// studio</div>
+        <h3>Studio</h3>
+        <div class="role">The one-click pipeline. A full campaign suite in a single run.</div>
+        <div class="price">
+          <span class="amt" data-mo="£299" data-yr="£249">£299</span>
+          <span class="per">/ mo</span>
+        </div>
+        <div class="billed" data-mo="billed monthly" data-yr="£2,990 billed yearly">billed monthly</div>
+        <div class="cta-wrap">
+          <a class="btn p full" data-app="signup" data-plan="studio" href="https://theaimarketerr.lovable.app/auth">Choose Studio →</a>
+        </div>
+        <div class="divider">everything in starter, plus</div>
+        <ul>
+          <li><span class="ck">✓</span> <span><b>One-click 8-step pipeline</b> — the whole suite, generated in parallel</span></li>
+          <li><span class="ck">✓</span> <span><b>Automated Reddit ICP</b> via Manus AI</span></li>
+          <li><span class="ck">✓</span> <span><b>15</b> campaign launches / month</span></li>
+          <li><span class="ck">✓</span> <span><b>AI Image Creator</b> — 200 images / month</span></li>
+          <li><span class="ck">✓</span> <span><b>25</b> client profiles · <b>3</b> seats</span></li>
+          <li><span class="ck">✓</span> <span>Full history, prompt vault &amp; exports</span></li>
+          <li class="off"><span class="ck">—</span> <span>Terminal Rooms + Jarvis</span></li>
+        </ul>
+      </div>
+
+      <!-- AGENCY -->
+      <div class="plan reveal">
+        <div class="tag">// agency</div>
+        <h3>Agency</h3>
+        <div class="role">The max plan. Unlimited launches and live Terminal Rooms.</div>
+        <div class="price">
+          <span class="amt" data-mo="£799" data-yr="£666">£799</span>
+          <span class="per">/ mo</span>
+        </div>
+        <div class="billed" data-mo="billed monthly" data-yr="£7,990 billed yearly">billed monthly</div>
+        <div class="cta-wrap">
+          <a class="btn p full" data-app="signup" data-plan="agency" href="https://theaimarketerr.lovable.app/auth">Choose Agency →</a>
+        </div>
+        <div class="divider">everything in studio, plus</div>
+        <ul>
+          <li><span class="ck">✓</span> <span><b>Terminal Rooms + Jarvis</b> — live terminal, voice agent, persistent memory</span></li>
+          <li><span class="ck">✓</span> <span><b>Unlimited</b> campaign launches</span></li>
+          <li><span class="ck">✓</span> <span><b>Unlimited</b> AI images &amp; client profiles</span></li>
+          <li><span class="ck">✓</span> <span><b>10</b> seats · priority generation queue</span></li>
+          <li><span class="ck">✓</span> <span><b>White-label exports</b></span></li>
+          <li><span class="ck">✓</span> <span>Priority support</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON TABLE ============ -->
+<section class="cmp">
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">compare</div>
+      <h2>Every plan, <span>line by line</span>.</h2>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>feature</th>
+          <th class="col">Starter<span class="cprice">£99 / mo</span></th>
+          <th class="col featcol">Studio<span class="cprice">£299 / mo</span></th>
+          <th class="col">Agency<span class="cprice">£799 / mo</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group"><td colspan="4">generation</td></tr>
+        <tr><td class="feat-name">11 standalone generators</td><td class="val"><span class="ck">✓</span></td><td class="val"><span class="ck">✓</span></td><td class="val"><span class="ck">✓</span></td></tr>
+        <tr><td class="feat-name">One-click 8-step auto-pipeline</td><td class="val"><span class="x">—</span></td><td class="val"><span class="ck">✓</span></td><td class="val"><span class="ck">✓</span></td></tr>
+        <tr><td class="feat-name">Campaign launches / month</td><td class="val muted">manual only</td><td class="val">15</td><td class="val">unlimited</td></tr>
+
+        <tr class="group"><td colspan="4">research &amp; assets</td></tr>
+        <tr><td class="feat-name">ICP research</td><td class="val muted">manual</td><td class="val">automated (Manus)</td><td class="val">automated (Manus)</td></tr>
+        <tr><td class="feat-name">AI Image Creator</td><td class="val"><span class="x">—</span></td><td class="val">200 / mo</td><td class="val">unlimited</td></tr>
+        <tr><td class="feat-name">Knowledge Base + QC</td><td class="val"><span class="ck">✓</span></td><td class="val"><span class="ck">✓</span></td><td class="val"><span class="ck">✓</span></td></tr>
+
+        <tr class="group"><td colspan="4">workspace</td></tr>
+        <tr><td class="feat-name">Client profiles</td><td class="val">3</td><td class="val">25</td><td class="val">unlimited</td></tr>
+        <tr><td class="feat-name">Seats</td><td class="val">1</td><td class="val">3</td><td class="val">10</td></tr>
+        <tr><td class="feat-name">White-label exports</td><td class="val"><span class="x">—</span></td><td class="val"><span class="x">—</span></td><td class="val"><span class="ck">✓</span></td></tr>
+
+        <tr class="group"><td colspan="4">terminal rooms</td></tr>
+        <tr><td class="feat-name">Live Terminal Rooms + Jarvis</td><td class="val"><span class="x">—</span></td><td class="val"><span class="x">—</span></td><td class="val"><span class="ck">✓</span></td></tr>
+        <tr><td class="feat-name">Priority generation queue</td><td class="val"><span class="x">—</span></td><td class="val"><span class="x">—</span></td><td class="val"><span class="ck">✓</span></td></tr>
+        <tr><td class="feat-name">Support</td><td class="val muted">standard</td><td class="val muted">standard</td><td class="val">priority</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow center">questions</div>
+      <h2>Good to <span>know</span>.</h2>
+    </div>
+    <div class="faq">
+      <div class="qa reveal"><h3>What's a "campaign launch"?</h3><p>One full run of the <b>8-step auto-pipeline</b> — ICP research plus all seven generators firing in parallel for a single client. Running individual tools on their own doesn't count against your launches.</p></div>
+      <div class="qa reveal"><h3>What's the difference between manual and automated ICP?</h3><p>On Starter you <b>paste your own customer research</b> to ground every asset. Studio and Agency run <b>automated Reddit ICP research via Manus AI</b> as the first pipeline step — no manual input needed.</p></div>
+      <div class="qa reveal"><h3>What are Terminal Rooms?</h3><p>A real, interactive terminal inside The AI Marketer — live OS shells over a WebSocket, paired with <b>Jarvis</b>, a voice-and-text agent with persistent memory. It runs on dedicated infrastructure, so it's exclusive to <b>Agency</b>.</p></div>
+      <div class="qa reveal"><h3>Can I change plans later?</h3><p>Yes — upgrade or downgrade at any time. Upgrades take effect immediately and unlock the pipeline, image generation or Terminal Rooms on the spot.</p></div>
+      <div class="qa reveal"><h3>What happens if I hit my launch limit?</h3><p>Your standalone generators keep working. To run more full pipelines that month you can top up launches or move up a plan — Agency is unlimited.</p></div>
+      <div class="qa reveal"><h3>Do annual plans save money?</h3><p>Yes — annual billing is <b>two months free</b> versus paying monthly, on every plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section id="start" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="eyebrow center">$ get_started</div>
+      <h2 style="margin-top:16px">Put a full campaign <span>on the table</span>.</h2>
+      <p>Pick a plan and launch your next client in a single run.</p>
+      <div class="row">
+        <a class="btn p" data-app="signup" data-plan="studio" href="https://theaimarketerr.lovable.app/auth">Get started →</a>
+        <a class="btn s mono" data-app="signin" href="https://theaimarketerr.lovable.app/auth">$ sign_in</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="inner">
+      <a class="brand" href="index.html#top"><img src="assets/aimarketer-logo-reversed-white.png" alt="The AI Marketer"></a>
+      <div class="fl">
+        <a href="index.html#pipeline">pipeline</a>
+        <a href="index.html#tools">tools</a>
+        <a href="index.html#terminal-rooms">terminal_rooms</a>
+        <a href="pricing.html">pricing</a>
+        <a data-app="signin" href="https://theaimarketerr.lovable.app/auth">sign_in</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 The AI Marketer · one brief in · full campaign out</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   App wiring — same APP_URL contract as index.html.
+   ============================================================ */
+const APP_URL = "https://theaimarketerr.lovable.app";   // live Lovable domain (double 'r')
+const ROUTES = {
+  signin: APP_URL + "/auth",
+  signup: APP_URL + "/auth",
+};
+document.querySelectorAll("[data-app]").forEach(el => {
+  const key = el.getAttribute("data-app");
+  if (ROUTES[key]) {
+    const plan = el.getAttribute("data-plan");
+    el.href = ROUTES[key] + (plan ? "?plan=" + plan : "");
+  }
+});
+
+/* Billing toggle — monthly / annual */
+function setBilling(mode){
+  document.getElementById('bm').classList.toggle('on', mode==='mo');
+  document.getElementById('by').classList.toggle('on', mode==='yr');
+  document.querySelectorAll('.plan .amt, .plan .billed').forEach(el=>{
+    const v = el.getAttribute(mode==='yr' ? 'data-yr' : 'data-mo');
+    if (v) el.textContent = v;
+  });
+}
+
+/* Scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+}, { threshold:0.12 });
+document.querySelectorAll(".reveal").forEach((el,i)=>{ el.style.transitionDelay = (i%3*70)+"ms"; io.observe(el); });
+
+/* Respect reduced motion */
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  document.querySelectorAll(".reveal").forEach(el=>{el.classList.add("in");el.style.transition="none";});
+}
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
