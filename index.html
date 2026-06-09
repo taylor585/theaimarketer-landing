@@ -292,6 +292,10 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
 [data-step]{opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 [data-step].on{opacity:1;transform:none}
 
+/* end-to-end terminal: tighter spacing to fit the full session */
+.term.e2e .body{line-height:1.7;font-size:12.5px;padding:18px 22px}
+.term.e2e .body [data-step]{margin:2px 0}
+
 /* tool panel body (hooks / ad copy demos) */
 .panelbody{background:#161616;padding:18px;min-height:372px}
 .panelhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--line)}
@@ -492,24 +496,31 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
     <div class="showcase flip">
       <div class="sc-text reveal">
         <div class="eyebrow">// terminal rooms · jarvis</div>
-        <h3>A live terminal, with <span>Jarvis</span> inside.</h3>
-        <p>Spawn a real OS shell, run a campaign by command, and pair with <b style="color:var(--lime)">Jarvis</b> — a voice-and-text agent with persistent memory. Every command clears a safety gate before it runs.</p>
+        <h3>Run a whole campaign <span>by command</span>.</h3>
+        <p>A real OS shell inside The AI Marketer. Type one command and watch the full pipeline work end to end — every generator streaming to <b style="color:var(--lime)">done</b> in parallel — then just talk to <b style="color:var(--lime)">Jarvis</b> to export the suite and queue what's next.</p>
         <ul>
           <li><b>▸</b> Real shells via node-pty over a live WebSocket</li>
+          <li><b>▸</b> 8 generators complete live, in parallel</li>
           <li><b>▸</b> Jarvis remembers your clients, brand &amp; history</li>
-          <li><b>▸</b> Rolling out to <b style="color:var(--lime)">Agency</b> plans first</li>
         </ul>
       </div>
-      <div class="sc-visual term reveal" style="position:relative;align-self:start">
+      <div class="sc-visual term e2e reveal" style="position:relative;align-self:start">
         <div class="bar"><i></i><i></i><i></i><span>the_ai_marketer · live terminal</span><span class="genpill" style="margin-left:auto">live</span></div>
-        <div class="body" data-seq data-speed="760">
+        <div class="body" data-seq data-speed="640">
           <div data-step><span class="c-lime">$</span> session.spawn <span class="c-mute">shell=zsh · model=grok-4.3</span></div>
           <div data-step><span class="c-el">▶</span> pty connected <span class="c-mute">·····</span> <span class="c-lime">ws: live</span></div>
+          <div data-step><span class="c-el">jarvis</span> <span class="c-mute">»</span> memory loaded · 142 notes · acme brand ready</div>
           <div data-step><span class="c-mute">~/the-ai-marketer $</span> run campaign --client acme</div>
-          <div data-step><span class="c-lime">✓</span> safety_gate <span class="c-mute">·······</span> <span class="c-lime">passed</span></div>
-          <div data-step><span class="c-el">▶</span> spawning 8 generators <span class="c-mute">···</span> <span class="c-lime">live</span></div>
-          <div data-step class="jarvis"><span class="c-el">jarvis</span> <span class="c-mute">»</span> memory loaded · 142 notes</div>
-          <div data-step><span class="c-el">jarvis</span> <span class="c-mute">»</span> campaign running — watching output <span class="cursor"></span></div>
+          <div data-step><span class="c-lime">✓</span> safety_gate <span class="c-mute">····</span> <span class="c-lime">passed</span></div>
+          <div data-step><span class="c-el">▶</span> spawning 8 generators in parallel…</div>
+          <div data-step><span class="c-mute">&nbsp;&nbsp;</span><span class="c-lime">✓</span> icp_research <span class="c-mute">·······</span> <span class="c-lime">done</span></div>
+          <div data-step><span class="c-mute">&nbsp;&nbsp;</span><span class="c-lime">✓</span> 90_hooks · emails <span class="c-mute">··</span> <span class="c-lime">done</span></div>
+          <div data-step><span class="c-mute">&nbsp;&nbsp;</span><span class="c-lime">✓</span> ad_copy · static <span class="c-mute">···</span> <span class="c-lime">done</span></div>
+          <div data-step><span class="c-mute">&nbsp;&nbsp;</span><span class="c-lime">✓</span> vsl · disclaimers <span class="c-mute">··</span> <span class="c-lime">done</span></div>
+          <div data-step><span class="c-lime">✓</span> campaign complete <span class="c-mute">·</span> 8/8 <span class="c-mute">·</span> 17m 04s</div>
+          <div data-step class="jarvis"><span class="c-mute">~/the-ai-marketer $</span> jarvis, export the suite</div>
+          <div data-step><span class="c-el">jarvis</span> <span class="c-mute">»</span> exported ✓ 90 hooks · 72 emails · ad copy · VSL</div>
+          <div data-step><span class="c-el">jarvis</span> <span class="c-mute">»</span> queue the Meta ad set next? <span class="cursor"></span></div>
         </div>
       </div>
     </div>
