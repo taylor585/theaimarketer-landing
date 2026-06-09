@@ -318,6 +318,31 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
 @media(max-width:980px){.trboard-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.trboard-grid{grid-template-columns:1fr}.trfeature-head h3{font-size:26px}}
 
+/* =================== HOVER-TO-RUN DEMO CARDS =================== */
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dcard{display:flex;flex-direction:column;gap:12px;outline:none}
+.dcard .frame{position:relative;cursor:pointer;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.dcard:hover .frame,.dcard:focus-visible .frame{border-color:var(--electric);transform:translateY(-3px)}
+.dbody{background:#161616;min-height:238px;padding:15px;display:flex;flex-direction:column}
+.dflow{display:grid;gap:11px}
+.dstep{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11.5px;color:var(--mute-2);opacity:.34;transition:opacity .4s var(--ease),color .4s var(--ease)}
+.dstep .dnum{width:19px;height:19px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:10px;flex:none;transition:.4s var(--ease)}
+.dstep.on{opacity:1;color:var(--cream)}
+.dstep.on .dnum{border-color:var(--lime);color:var(--lime)}
+.dstep.done{opacity:.85}
+.dstep.done .dnum{background:var(--lime);color:#161616;border-color:var(--lime);font-weight:600}
+.dout{margin-top:auto;opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);border:1px solid var(--line);border-radius:9px;background:#1d1d1d;padding:12px}
+.dout.on{opacity:1;transform:none;border-color:#2f3a22}
+.dout-h{font-family:var(--font-mono);font-size:9.5px;color:var(--lime);letter-spacing:.07em;margin-bottom:7px}
+.dout-b{font-family:var(--font-body);font-size:12px;color:var(--cream);line-height:1.55}
+.dout-b b{color:#8aa0ff;font-weight:600}
+.dout-b .q{color:var(--lime);font-style:italic}
+.dout-b .ok{color:var(--lime)}
+.dhint{position:absolute;top:50px;right:12px;z-index:2;font-family:var(--font-mono);font-size:10px;color:var(--mute-2);background:rgba(22,22,22,.72);border:1px solid var(--line);border-radius:999px;padding:3px 9px;transition:opacity .3s;pointer-events:none}
+.dcard.playing .dhint{opacity:0}
+@media(max-width:980px){.dgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.dgrid{grid-template-columns:1fr}}
+
 /* tool panel body (hooks / ad copy demos) */
 .panelbody{background:#161616;padding:18px;min-height:372px}
 .panelhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--line)}
@@ -515,7 +540,7 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
     </div>
 
     <!-- MOTION 2 · Terminal Rooms — real six-pane layout -->
-    <div class="trfeature reveal">
+    <div class="trfeature reveal" id="terminal-rooms" style="scroll-margin-top:80px">
       <div class="trfeature-head">
         <div class="eyebrow center">// terminal rooms · jarvis</div>
         <h3>Six agents, one room — <span>Jarvis</span> running the floor.</h3>
@@ -623,35 +648,127 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
     </div>
 
     <div style="text-align:center;margin:14px 0 34px">
-      <div class="eyebrow center">// every other screen, for real</div>
-      <p style="font-family:var(--font-body);color:#bdbdbd;font-size:15px;margin-top:13px">Real, unedited screenshots of the rest of the toolkit.</p>
+      <div class="eyebrow center">// the rest of the toolkit, working</div>
+      <p style="font-family:var(--font-body);color:#bdbdbd;font-size:15px;margin-top:13px"><b style="color:var(--cream)">Hover any tool</b> to watch it run — real inputs, step by step, to the output it gives you.</p>
     </div>
 
-    <div class="gallery">
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/dashboard</span></div><img src="assets/shots/dashboard.webp" width="1400" height="875" alt="Dashboard screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// dashboard</div><div class="t">Your whole toolkit, one place</div><div class="d">Every generator on a single dark, on-brand workspace.</div></div>
+    <div class="dgrid">
+
+      <div class="dcard reveal" tabindex="0" aria-label="Reddit ICP Research — hover to run the demo">
+        <div class="frame">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/reddit-icp-research</span></div>
+          <span class="dhint">▸ hover to run</span>
+          <div class="dbody">
+            <div class="dflow">
+              <div class="dstep" data-hstep><span class="dnum">1</span> scanning r/marketing +4 subs</div>
+              <div class="dstep" data-hstep><span class="dnum">2</span> extracting pains &amp; quotes</div>
+              <div class="dstep" data-hstep><span class="dnum">3</span> building persona</div>
+            </div>
+            <div class="dout" data-hout>
+              <div class="dout-h">// output · ICP persona</div>
+              <div class="dout-b"><b>Overwhelmed Agency Owner</b><br>pain: drowning in client deliverables<br><span class="q">"I spent another weekend writing emails."</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cap"><div class="k">// reddit_icp</div><div class="t">Reddit-grounded ICP</div><div class="d">Mines real customer language, pains and quotes before you write a word.</div></div>
       </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/email-creator</span></div><img src="assets/shots/email-creator.webp" width="1400" height="875" alt="Email Creator screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// email_creator</div><div class="t">72 emails, 4 sequences</div><div class="d">Full welcome, nurture, launch and re-engage flows in one pass.</div></div>
+
+      <div class="dcard reveal" tabindex="0" aria-label="Email Creator — hover to run the demo">
+        <div class="frame">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/email-creator</span></div>
+          <span class="dhint">▸ hover to run</span>
+          <div class="dbody">
+            <div class="dflow">
+              <div class="dstep" data-hstep><span class="dnum">1</span> sequence: welcome</div>
+              <div class="dstep" data-hstep><span class="dnum">2</span> generating 18 emails</div>
+              <div class="dstep" data-hstep><span class="dnum">3</span> QC · on-brand pass</div>
+            </div>
+            <div class="dout" data-hout>
+              <div class="dout-h">// output · email 1 / 18</div>
+              <div class="dout-b"><b>Subject:</b> You're in — here's your first win<br>"Hey Sarah, over the next few days I'll show you how to launch a client in a single run…"</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap"><div class="k">// email_creator</div><div class="t">72 emails, 4 sequences</div><div class="d">Welcome, nurture, launch and re-engage flows — written in one pass.</div></div>
       </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/high-converting-vsl</span></div><img src="assets/shots/vsl.webp" width="1400" height="875" alt="High-Converting VSL screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// vsl</div><div class="t">High-converting VSL</div><div class="d">A full video sales letter script built on a proven structure.</div></div>
+
+      <div class="dcard reveal" tabindex="0" aria-label="Video Script Creator — hover to run the demo">
+        <div class="frame">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/video-script-creator</span></div>
+          <span class="dhint">▸ hover to run</span>
+          <div class="dbody">
+            <div class="dflow">
+              <div class="dstep" data-hstep><span class="dnum">1</span> writing hook</div>
+              <div class="dstep" data-hstep><span class="dnum">2</span> building body</div>
+              <div class="dstep" data-hstep><span class="dnum">3</span> closing CTA</div>
+            </div>
+            <div class="dout" data-hout>
+              <div class="dout-h">// output · short-form script</div>
+              <div class="dout-b"><b>HOOK:</b> "Stop boosting posts. Do this instead."<br><b>CTA:</b> "Comment 'LAUNCH' and I'll send the framework."</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap"><div class="k">// video_scripts</div><div class="t">Short-form video scripts</div><div class="d">Hook-to-CTA scripts engineered for retention, ready to shoot.</div></div>
       </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/reddit-icp-research</span></div><img src="assets/shots/reddit-icp.webp" width="1400" height="875" alt="Reddit ICP Research screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// reddit_icp</div><div class="t">Reddit-grounded ICP</div><div class="d">Mine real customer language, pains and objections before you write.</div></div>
+
+      <div class="dcard reveal" tabindex="0" aria-label="High-Converting VSL — hover to run the demo">
+        <div class="frame">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/high-converting-vsl</span></div>
+          <span class="dhint">▸ hover to run</span>
+          <div class="dbody">
+            <div class="dflow">
+              <div class="dstep" data-hstep><span class="dnum">1</span> lead</div>
+              <div class="dstep" data-hstep><span class="dnum">2</span> story</div>
+              <div class="dstep" data-hstep><span class="dnum">3</span> offer</div>
+              <div class="dstep" data-hstep><span class="dnum">4</span> close</div>
+            </div>
+            <div class="dout" data-hout>
+              <div class="dout-h">// output · VSL outline</div>
+              <div class="dout-b"><b>Lead:</b> the $0 ad that booked 14 calls · <b>Offer:</b> the campaign engine · <b>Close:</b> start free today</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap"><div class="k">// vsl</div><div class="t">High-converting VSL</div><div class="d">A full video sales letter built on a proven lead-to-close structure.</div></div>
       </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/video-script-creator</span></div><img src="assets/shots/video-scripts.webp" width="1400" height="875" alt="Video Script Creator screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// video_scripts</div><div class="t">Short-form video scripts</div><div class="d">Hook-to-CTA scripts engineered for retention.</div></div>
+
+      <div class="dcard reveal" tabindex="0" aria-label="Static Image Copy — hover to run the demo">
+        <div class="frame">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/static-image-copy</span></div>
+          <span class="dhint">▸ hover to run</span>
+          <div class="dbody">
+            <div class="dflow">
+              <div class="dstep" data-hstep><span class="dnum">1</span> angle: pain</div>
+              <div class="dstep" data-hstep><span class="dnum">2</span> on-image copy</div>
+              <div class="dstep" data-hstep><span class="dnum">3</span> creative direction</div>
+            </div>
+            <div class="dout" data-hout>
+              <div class="dout-h">// output · static ad</div>
+              <div class="dout-b"><b>Headline:</b> "Your ads die on day 4."<br><b>Sub:</b> Here's the fix → · <span class="q">direction: bold, high-contrast, one focal CTA</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cap"><div class="k">// static_copy</div><div class="t">Static image copy</div><div class="d">On-image copy plus creative direction for your static ad sets.</div></div>
       </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/master-ai-rules</span></div><img src="assets/shots/master-ai-rules.webp" width="1400" height="875" alt="Master AI Rules screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// master_ai_rules</div><div class="t">Stays on-brand, every time</div><div class="d">Quality control and master rules every tool must follow.</div></div>
+
+      <div class="dcard reveal" tabindex="0" aria-label="Master AI Rules and Quality Control — hover to run the demo">
+        <div class="frame">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/master-ai-rules</span></div>
+          <span class="dhint">▸ hover to run</span>
+          <div class="dbody">
+            <div class="dflow">
+              <div class="dstep" data-hstep><span class="dnum">1</span> load brand rules</div>
+              <div class="dstep" data-hstep><span class="dnum">2</span> check output</div>
+              <div class="dstep" data-hstep><span class="dnum">3</span> score</div>
+            </div>
+            <div class="dout" data-hout>
+              <div class="dout-h">// output · QC report</div>
+              <div class="dout-b"><span class="ok">✓</span> tone on-brand &nbsp; <span class="ok">✓</span> no banned words &nbsp; <span class="ok">✓</span> CTA present<br><b>Quality score: 98 / 100 · approved</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="cap"><div class="k">// master_ai_rules</div><div class="t">Stays on-brand, every time</div><div class="d">Quality control + master rules every generator is checked against.</div></div>
       </div>
+
     </div>
   </div>
 </section>
@@ -676,56 +793,6 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
       <div class="tool reveal"><div class="tag">// disclaimers</div><h3>Disclaimers</h3><p>Compliance-ready legal language matched to the offer and niche.</p></div>
       <div class="tool reveal"><div class="tag">// metastream</div><h3>MetaStream Intelligence</h3><p>Analyse your Meta ad-stream spend and surface exactly what's working.</p></div>
       <div class="tool reveal"><div class="tag">// knowledge_base</div><h3>Knowledge Base + QC</h3><p>Client assets, quality control and Master AI Rules keep output on-brand.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TERMINAL ROOMS FEATURE ============ -->
-<section id="terminal-rooms" class="tr">
-  <div class="wrap grid">
-    <div class="reveal">
-      <div class="eyebrow soon">coming soon · live terminal</div>
-      <h2>Terminal Rooms <span>+ Jarvis</span></h2>
-      <p>The next layer: a real, interactive terminal inside The AI Marketer. Spawn live OS shells, run commands, and pair with <b style="color:var(--lime)">Jarvis</b> — a voice-and-text agent with persistent memory. Rolling out to <b style="color:var(--lime)">Agency</b> plans first.</p>
-      <ul>
-        <li><b>▸</b> Real shells via node-pty over a live WebSocket.</li>
-        <li><b>▸</b> Jarvis: voice + text agent, session &amp; memory persisted.</li>
-        <li><b>▸</b> Safety gate on every command before it runs.</li>
-        <li><b>▸</b> Fully in-brand — Electric/Lime, Space Grotesk + Plex Mono.</li>
-      </ul>
-      <div class="row" style="display:flex;gap:14px;flex-wrap:wrap">
-        <a class="btn p" href="https://theaimarketerr.lovable.app/auth">Get early access →</a>
-        <span class="btn ghost">Coming soon</span>
-      </div>
-    </div>
-
-    <div class="term tr-term reveal">
-      <div class="bar"><i></i><i></i><i></i><span>the_ai_marketer · live terminal <span class="soon-pill">preview</span></span></div>
-      <div class="body">
-        <div><span class="c-lime">$</span> session.spawn <span class="c-mute">shell=zsh · model=grok-4.3</span></div>
-        <div><span class="c-el">▶</span> pty connected <span class="c-mute">·····</span> <span class="c-lime">ws: live</span></div>
-        <div><span class="c-mute">~/the-ai-marketer $</span> run campaign --client acme</div>
-        <div><span class="c-lime">✓</span> safety_gate <span class="c-mute">·······</span> <span class="c-lime">passed</span></div>
-        <div class="jarvis">
-          <div><span class="c-el">jarvis</span> <span class="c-mute">»</span> memory loaded · 142 notes</div>
-          <div><span class="c-el">jarvis</span> <span class="c-mute">»</span> ready when you are <span class="cursor"></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section>
-  <div class="wrap">
-    <div class="shead center">
-      <div class="eyebrow center">how it works</div>
-      <h2>Brief to suite in <span>three moves</span>.</h2>
-    </div>
-    <div class="how">
-      <div class="howcard reveal"><div class="num">01</div><h3>Drop the brief</h3><p>Add the client, offer and any assets. The system reads them and builds the working context.</p></div>
-      <div class="howcard reveal"><div class="num">02</div><h3>Run the pipeline</h3><p>ICP research goes first; every generator then fires in parallel. Watch it stream in the live console.</p></div>
-      <div class="howcard reveal"><div class="num">03</div><h3>Ship the campaign</h3><p>Review, refine in any tool, and export a complete, on-brand marketing suite ready to launch.</p></div>
     </div>
   </div>
 </section>
@@ -921,7 +988,51 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
     io.observe(seq);
   });
 })();
+
+/* Hover-to-run demo cards — play steps then reveal output on hover/focus; autoplay on touch */
+(function(){
+  var cards = document.querySelectorAll('.dcard');
+  if (!cards.length) return;
+  var reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover= window.matchMedia('(hover: hover)').matches;
+  cards.forEach(function(card){
+    var steps = [].slice.call(card.querySelectorAll('[data-hstep]'));
+    var out   = card.querySelector('[data-hout]');
+    var timers = [];
+    function clearT(){ timers.forEach(clearTimeout); timers = []; }
+    function reset(){ clearT(); steps.forEach(function(s){ s.classList.remove('on','done'); }); if (out) out.classList.remove('on'); card.classList.remove('playing'); }
+    function play(){
+      reset(); card.classList.add('playing');
+      var gap = 600, start = 320;
+      steps.forEach(function(s,i){
+        timers.push(setTimeout(function(){
+          s.classList.add('on');
+          if (i > 0) steps[i-1].classList.add('done');
+        }, start + i*gap));
+      });
+      timers.push(setTimeout(function(){
+        steps.forEach(function(s){ s.classList.add('done'); });
+        if (out) out.classList.add('on');
+      }, start + steps.length*gap));
+    }
+    if (reduce){ steps.forEach(function(s){ s.classList.add('on','done'); }); if (out) out.classList.add('on'); return; }
+    if (canHover){
+      card.addEventListener('mouseenter', play);
+      card.addEventListener('mouseleave', reset);
+      card.addEventListener('focusin', play);
+      card.addEventListener('focusout', reset);
+    } else if ('IntersectionObserver' in window){
+      // touch devices can't hover — autoplay once when scrolled into view, leave final state
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting){ play(); io.unobserve(card); } });
+      }, { threshold: 0.45 });
+      io.observe(card);
+    } else {
+      steps.forEach(function(s){ s.classList.add('on','done'); }); if (out) out.classList.add('on');
+    }
+  });
+})();
 </script>
-<noscript><style>.reveal{opacity:1!important;transform:none!important}[data-step]{opacity:1!important;transform:none!important}.mobile-menu{display:none!important}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}[data-step]{opacity:1!important;transform:none!important}.dstep{opacity:1!important}.dstep .dnum{border-color:var(--lime);color:var(--lime)}.dout{opacity:1!important;transform:none!important}.dhint{display:none!important}.mobile-menu{display:none!important}</style></noscript>
 </body>
 </html>
