@@ -281,6 +281,42 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
 .gcard .cap .t{font-size:15px;font-weight:600;margin-top:3px}
 .gcard .cap .d{font-family:var(--font-body);font-size:13px;color:var(--mute-2);margin-top:3px;line-height:1.45}
 
+/* =================== FEATURED MOTION (animated tool demos) =================== */
+.showcase{position:relative}
+.showcase.flip .sc-visual{order:1}
+.showcase.flip .sc-text{order:2}
+.demotag{position:absolute;top:52px;right:14px;z-index:2;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);background:rgba(22,22,22,.72);border:1px solid var(--line);border-radius:999px;padding:3px 9px;display:flex;align-items:center;gap:6px}
+.demotag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 var(--lime);animation:pulse 1.8s var(--ease) infinite}
+
+/* generic step-reveal driver (JS adds .on one by one, then loops) */
+[data-step]{opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+[data-step].on{opacity:1;transform:none}
+
+/* tool panel body (hooks / ad copy demos) */
+.panelbody{background:#161616;padding:18px;min-height:372px}
+.panelhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.panelhead .pt{font-family:var(--font-mono);font-size:12px;color:var(--cream);letter-spacing:.03em}
+.panelhead .pt em{color:var(--electric);font-style:normal}
+.genpill{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--lime)}
+.genpill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);animation:pulse 1.6s var(--ease) infinite}
+@media(prefers-reduced-motion:reduce){.genpill::before,.demotag::before{animation:none}}
+
+/* hooks demo */
+.hooklist{display:grid;gap:9px}
+.hookrow{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#1d1d1d}
+.hookrow .hn{font-family:var(--font-mono);font-size:11px;color:var(--electric);min-width:22px}
+.hookrow .hx{font-family:var(--font-body);font-size:13px;color:var(--cream);line-height:1.35}
+.hookrow .tg{margin-left:auto;flex:none;font-family:var(--font-mono);font-size:10px;color:var(--lime);border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+.hookmore{font-family:var(--font-mono);font-size:11px;color:var(--mute-2);text-align:center;padding:9px 0 1px}
+
+/* ad copy demo */
+.adwrap{display:grid;gap:10px}
+.adcard{border:1px solid var(--line);border-radius:11px;background:#1d1d1d;padding:14px;display:grid;gap:6px}
+.adcard .angle{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+.adcard .hl{font-weight:600;font-size:15px;color:var(--cream);line-height:1.25}
+.adcard .bd{font-family:var(--font-body);font-size:12.5px;color:var(--mute-2);line-height:1.5}
+.adcard .cta{justify-self:start;font-family:var(--font-mono);font-size:11px;color:#fff;background:var(--electric);border-radius:6px;padding:6px 13px;margin-top:3px}
+
 /* =================== RESPONSIVE =================== */
 @media(max-width:980px){
   .hero .grid{grid-template-columns:1fr;gap:40px}
@@ -424,14 +460,15 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
 <section id="inside" class="inside">
   <div class="wrap">
     <div class="shead center">
-      <div class="eyebrow center">see inside</div>
-      <h2>This is what you get <span>before you log in</span>.</h2>
-      <p>Real screens from the product — the live engine and the tools you'll use, exactly as they look inside.</p>
+      <div class="eyebrow center">see inside · in motion</div>
+      <h2>See it <span>in motion</span> — before you ever log in.</h2>
+      <p>Live, animated demos of the real workspace — exactly what each tool does the moment you're signed in. The flagship four in motion; the rest of the suite below.</p>
     </div>
 
+    <!-- MOTION 1 · Client Launchpad pipeline (orbit video) -->
     <div class="showcase">
-      <div class="reveal">
-        <div class="eyebrow">// the engine</div>
+      <div class="sc-text reveal">
+        <div class="eyebrow">// client launchpad · live</div>
         <h3>Watch eight generators run <span>at once</span>.</h3>
         <p>When you launch a campaign, the Client Launchpad fans out the whole suite in parallel. This is the live progress view — every generator orbiting a single run, filling in as it completes.</p>
         <ul>
@@ -440,7 +477,7 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
           <li><b>▸</b> ~15–20 minutes, not days</li>
         </ul>
       </div>
-      <div class="frame live reveal">
+      <div class="sc-visual frame live reveal">
         <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/content-pipeline</span></div>
         <span class="livetag">live run</span>
         <video class="demo" poster="assets/clips/orbit-poster.jpg" muted loop playsinline preload="none"
@@ -451,11 +488,98 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
       </div>
     </div>
 
-    <div class="gallery">
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/content-pipeline</span></div><img src="assets/shots/launchpad-populated.webp" width="1400" height="875" alt="Client Launchpad screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// client_launchpad</div><div class="t">One brief, eight outputs</div><div class="d">Drop a client in and launch the entire 8-step pipeline in a single click.</div></div>
+    <!-- MOTION 2 · Terminal Rooms + Jarvis (animated terminal) -->
+    <div class="showcase flip">
+      <div class="sc-text reveal">
+        <div class="eyebrow">// terminal rooms · jarvis</div>
+        <h3>A live terminal, with <span>Jarvis</span> inside.</h3>
+        <p>Spawn a real OS shell, run a campaign by command, and pair with <b style="color:var(--lime)">Jarvis</b> — a voice-and-text agent with persistent memory. Every command clears a safety gate before it runs.</p>
+        <ul>
+          <li><b>▸</b> Real shells via node-pty over a live WebSocket</li>
+          <li><b>▸</b> Jarvis remembers your clients, brand &amp; history</li>
+          <li><b>▸</b> Rolling out to <b style="color:var(--lime)">Agency</b> plans first</li>
+        </ul>
       </div>
+      <div class="sc-visual term reveal" style="position:relative;align-self:start">
+        <div class="bar"><i></i><i></i><i></i><span>the_ai_marketer · live terminal</span><span class="genpill" style="margin-left:auto">live</span></div>
+        <div class="body" data-seq data-speed="760">
+          <div data-step><span class="c-lime">$</span> session.spawn <span class="c-mute">shell=zsh · model=grok-4.3</span></div>
+          <div data-step><span class="c-el">▶</span> pty connected <span class="c-mute">·····</span> <span class="c-lime">ws: live</span></div>
+          <div data-step><span class="c-mute">~/the-ai-marketer $</span> run campaign --client acme</div>
+          <div data-step><span class="c-lime">✓</span> safety_gate <span class="c-mute">·······</span> <span class="c-lime">passed</span></div>
+          <div data-step><span class="c-el">▶</span> spawning 8 generators <span class="c-mute">···</span> <span class="c-lime">live</span></div>
+          <div data-step class="jarvis"><span class="c-el">jarvis</span> <span class="c-mute">»</span> memory loaded · 142 notes</div>
+          <div data-step><span class="c-el">jarvis</span> <span class="c-mute">»</span> campaign running — watching output <span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOTION 3 · 90 Hooks (streaming list + live counter) -->
+    <div class="showcase">
+      <div class="sc-text reveal">
+        <div class="eyebrow">// 90 hooks</div>
+        <h3>Ninety hooks, <span>streaming in</span>.</h3>
+        <p>One click fans out ninety scroll-stopping openers tuned to your ICP's pains and desires — ranked and tagged per channel, ready to test.</p>
+        <ul>
+          <li><b>▸</b> Tuned to real customer language from ICP research</li>
+          <li><b>▸</b> Tagged per channel — email, ads, short-form, blog</li>
+          <li><b>▸</b> Export and A/B test the winners</li>
+        </ul>
+      </div>
+      <div class="sc-visual frame live reveal">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/90-hooks</span></div>
+        <span class="demotag">live demo</span>
+        <div class="panelbody" data-seq data-speed="520">
+          <div class="panelhead">
+            <span class="pt">hooks.generate <em>(<span data-counter="90">90</span>/90)</em></span>
+          </div>
+          <div class="hooklist">
+            <div class="hookrow" data-step><span class="hn">01</span><span class="hx">The 3-word subject line that doubled our open rate</span><span class="tg">email</span></div>
+            <div class="hookrow" data-step><span class="hn">02</span><span class="hx">Your ads stop working on day 4. Here's the fix.</span><span class="tg">meta</span></div>
+            <div class="hookrow" data-step><span class="hn">03</span><span class="hx">I fired my agency. Here's what I built instead.</span><span class="tg">short-form</span></div>
+            <div class="hookrow" data-step><span class="hn">04</span><span class="hx">We tested 1,000 headlines. These 9 won.</span><span class="tg">blog</span></div>
+            <div class="hookrow" data-step><span class="hn">05</span><span class="hx">Your landing page isn't broken — your hook is.</span><span class="tg">ads</span></div>
+            <div class="hookrow" data-step><span class="hn">06</span><span class="hx">Steal our 90-hook framework — free.</span><span class="tg">lead-gen</span></div>
+            <div class="hookmore" data-step>+ 84 more generating…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOTION 4 · Ad Copy (variants populating across angles) -->
+    <div class="showcase flip">
+      <div class="sc-text reveal">
+        <div class="eyebrow">// ad copy</div>
+        <h3>Ad copy across <span>every angle</span>.</h3>
+        <p>Paid-ad copy written across multiple angles — pain, curiosity, authority — each formatted for the platform and ready to paste into Meta, Google and beyond.</p>
+        <ul>
+          <li><b>▸</b> Ten variations per run, multiple angles</li>
+          <li><b>▸</b> Headline, primary text &amp; CTA for each</li>
+          <li><b>▸</b> Platform-formatted, on-brand every time</li>
+        </ul>
+      </div>
+      <div class="sc-visual frame live reveal">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">theaimarketerr.lovable.app/ad-copy-generator</span></div>
+        <span class="demotag">live demo</span>
+        <div class="panelbody" data-seq data-speed="940">
+          <div class="panelhead">
+            <span class="pt">ad_copy <em>· 3 angles</em></span>
+          </div>
+          <div class="adwrap">
+            <div class="adcard" data-step><div class="angle">pain</div><div class="hl">Still writing ads at midnight?</div><div class="bd">Feed one brief. Get ten platform-ready ad variations before your coffee's cold.</div><span class="cta">Launch a campaign →</span></div>
+            <div class="adcard" data-step><div class="angle">curiosity</div><div class="hl">One brief in. A full campaign out.</div><div class="bd">ICP, 90 hooks, 72 emails, ad copy and a VSL — generated in parallel, in a single run.</div><span class="cta">See it run →</span></div>
+            <div class="adcard" data-step><div class="angle">authority</div><div class="hl">Built for agencies that ship.</div><div class="bd">On-brand output, quality-controlled by your Master AI Rules — every single time.</div><span class="cta">Start free →</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:14px 0 34px">
+      <div class="eyebrow center">// every other screen, for real</div>
+      <p style="font-family:var(--font-body);color:#bdbdbd;font-size:15px;margin-top:13px">Real, unedited screenshots of the rest of the toolkit.</p>
+    </div>
+
+    <div class="gallery">
       <div class="gcard reveal">
         <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/dashboard</span></div><img src="assets/shots/dashboard.webp" width="1400" height="875" alt="Dashboard screen" loading="lazy"></div>
         <div class="cap"><div class="k">// dashboard</div><div class="t">Your whole toolkit, one place</div><div class="d">Every generator on a single dark, on-brand workspace.</div></div>
@@ -463,14 +587,6 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
       <div class="gcard reveal">
         <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/email-creator</span></div><img src="assets/shots/email-creator.webp" width="1400" height="875" alt="Email Creator screen" loading="lazy"></div>
         <div class="cap"><div class="k">// email_creator</div><div class="t">72 emails, 4 sequences</div><div class="d">Full welcome, nurture, launch and re-engage flows in one pass.</div></div>
-      </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/90-hooks</span></div><img src="assets/shots/ninety-hooks.webp" width="1400" height="875" alt="90 Hooks screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// 90_hooks</div><div class="t">90 hooks, ready to test</div><div class="d">A wall of openers tuned to your ICP across every channel.</div></div>
-      </div>
-      <div class="gcard reveal">
-        <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/ad-copy-generator</span></div><img src="assets/shots/ad-copy.webp" width="1400" height="875" alt="Ad Copy Generator screen" loading="lazy"></div>
-        <div class="cap"><div class="k">// ad_copy</div><div class="t">Multi-angle ad copy</div><div class="d">Ten ad variations with hooks and CTAs, formatted per platform.</div></div>
       </div>
       <div class="gcard reveal">
         <div class="frame"><div class="chrome"><i></i><i></i><i></i><span class="url">/high-converting-vsl</span></div><img src="assets/shots/vsl.webp" width="1400" height="875" alt="High-Converting VSL screen" loading="lazy"></div>
@@ -662,6 +778,8 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
         <a href="#tools">tools</a>
         <a href="#pricing">pricing</a>
         <a href="#terminal-rooms">terminal_rooms</a>
+        <a href="terms.html">terms</a>
+        <a href="privacy.html">privacy</a>
         <a href="https://theaimarketerr.lovable.app/auth">sign_in</a>
       </div>
     </div>
@@ -716,7 +834,47 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
   }, { threshold: 0.35 });
   vids.forEach(function(v){ vio.observe(v); });
 })();
+
+/* Animated tool demos — step-reveal sequences that loop while on screen */
+(function(){
+  var seqs = document.querySelectorAll('[data-seq]');
+  if (!seqs.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)){
+    seqs.forEach(function(seq){
+      seq.querySelectorAll('[data-step]').forEach(function(el){ el.classList.add('on'); });
+      var c = seq.querySelector('[data-counter]'); if (c) c.textContent = c.dataset.counter;
+    });
+    return;
+  }
+  seqs.forEach(function(seq){
+    var steps   = [].slice.call(seq.querySelectorAll('[data-step]'));
+    var counter = seq.querySelector('[data-counter]');
+    var target  = counter ? parseInt(counter.dataset.counter, 10) : 0;
+    var speed   = parseInt(seq.dataset.speed, 10) || 650;
+    var timer = null, running = false, i = 0;
+    function clear(){ steps.forEach(function(s){ s.classList.remove('on'); }); if (counter) counter.textContent = '0'; i = 0; }
+    function step(){
+      if (i < steps.length){
+        steps[i].classList.add('on');
+        if (counter) counter.textContent = Math.round(target * (i + 1) / steps.length);
+        i++;
+        timer = setTimeout(step, speed);
+      } else {
+        if (counter) counter.textContent = target;
+        timer = setTimeout(function(){ clear(); timer = setTimeout(step, 520); }, 2600);
+      }
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !running){ running = true; clear(); step(); }
+        else if (!e.isIntersecting && running){ running = false; clearTimeout(timer); }
+      });
+    }, { threshold: 0.3 });
+    io.observe(seq);
+  });
+})();
 </script>
-<noscript><style>.reveal{opacity:1!important;transform:none!important}.mobile-menu{display:none!important}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}[data-step]{opacity:1!important;transform:none!important}.mobile-menu{display:none!important}</style></noscript>
 </body>
 </html>
