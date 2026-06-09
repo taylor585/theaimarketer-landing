@@ -302,12 +302,14 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
 .trjarvis{font-family:var(--font-mono);font-size:12px;color:var(--mute-2);padding:13px 16px;border-bottom:1px solid var(--line);background:#191919;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .trjarvis b{color:var(--electric);font-weight:500}
 .trboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:14px;background:#161616}
-.trpane{background:#1b1b1b;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-height:160px}
+.trpane{background:#1b1b1b;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-height:168px}
 .trpane-head{display:flex;align-items:center;gap:8px;padding:9px 11px;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:11px;color:var(--cream);background:#191919}
 .trpane-head b{color:var(--electric);font-weight:600;margin-left:1px}
 .trpane-head .role{margin-left:auto;color:var(--lime);font-size:9px;text-transform:uppercase;letter-spacing:.08em}
 .trpane-head .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);flex:none;animation:pulse 1.8s var(--ease) infinite}
-.trpane-body{padding:11px;font-family:var(--font-mono);font-size:10.5px;line-height:1.9;color:var(--mute-2);flex:1}
+.trpane-body{padding:11px;font-family:var(--font-mono);font-size:10px;line-height:1.85;color:var(--mute-2);flex:1}
+.trpane-body .mdl{overflow-wrap:anywhere}
+.trpane-body .mdl b{color:#8aa0ff;font-weight:500}
 .trpane-input{display:flex;align-items:center;gap:6px;padding:8px 10px;border-top:1px solid var(--line);background:#141414}
 .trpane-input .seg{font-family:var(--font-mono);font-size:9.5px;padding:3px 8px;border-radius:6px;border:1px solid var(--line);color:var(--mute-2)}
 .trpane-input .seg.on{color:var(--electric);border-color:var(--electric)}
@@ -527,32 +529,32 @@ footer .copy{font-family:var(--font-mono);font-size:12px;color:var(--mute);margi
           <div class="trboard-grid">
             <div class="trpane" data-step>
               <div class="trpane-head"><span class="dot"></span>Terminal 1 · <b>Forge</b><span class="role">code</span></div>
-              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-1</div><div class="c-mute">agent: Forge · running</div><div><span class="c-el">▶</span> building landing variant…</div></div>
+              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-1</div><div class="c-mute mdl">model: <b>openai/gpt-5.5</b></div><div><span class="c-el">▶</span> building landing variant…</div></div>
               <div class="trpane-input"><span class="seg on">✦ Agent</span><span class="seg">⌘ Shell</span><span class="ph">message Forge…</span></div>
             </div>
             <div class="trpane" data-step>
               <div class="trpane-head"><span class="dot"></span>Terminal 2 · <b>Oracle</b><span class="role">research</span></div>
-              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-2</div><div class="c-mute">agent: Oracle · running</div><div><span class="c-el">▶</span> mining r/marketing · 142 posts</div></div>
+              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-2</div><div class="c-mute mdl">model: <b>perplexity/sonar-deep-research</b></div><div><span class="c-el">▶</span> mining r/marketing · 142 posts</div></div>
               <div class="trpane-input"><span class="seg on">✦ Agent</span><span class="seg">⌘ Shell</span><span class="ph">message Oracle…</span></div>
             </div>
             <div class="trpane" data-step>
               <div class="trpane-head"><span class="dot"></span>Terminal 3 · <b>Hermes</b><span class="role">comms</span></div>
-              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-3</div><div class="c-mute">agent: Hermes · running</div><div><span class="c-el">▶</span> drafting welcome email 12/18</div></div>
+              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-3</div><div class="c-mute mdl">model: <b>anthropic/claude-sonnet-4.6</b></div><div><span class="c-el">▶</span> drafting welcome email 12/18</div></div>
               <div class="trpane-input"><span class="seg on">✦ Agent</span><span class="seg">⌘ Shell</span><span class="ph">message Hermes…</span></div>
             </div>
             <div class="trpane" data-step>
               <div class="trpane-head"><span class="dot"></span>Terminal 4 · <b>Quill</b><span class="role">writing</span></div>
-              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-4</div><div class="c-mute">agent: Quill · running</div><div><span class="c-el">▶</span> VSL script · act 2 of 3</div></div>
+              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-4</div><div class="c-mute mdl">model: <b>anthropic/claude-sonnet-4.6</b></div><div><span class="c-el">▶</span> VSL script · act 2 of 3</div></div>
               <div class="trpane-input"><span class="seg on">✦ Agent</span><span class="seg">⌘ Shell</span><span class="ph">message Quill…</span></div>
             </div>
             <div class="trpane" data-step>
               <div class="trpane-head"><span class="dot"></span>Terminal 5 · <b>Claw</b><span class="role">strategy</span></div>
-              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-5</div><div class="c-mute">agent: Claw · running</div><div><span class="c-el">▶</span> ranking 9 offer angles</div></div>
+              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-5</div><div class="c-mute mdl">model: <b>openai/gpt-5.5</b></div><div><span class="c-el">▶</span> ranking 9 offer angles</div></div>
               <div class="trpane-input"><span class="seg on">✦ Agent</span><span class="seg">⌘ Shell</span><span class="ph">message Claw…</span></div>
             </div>
             <div class="trpane" data-step>
               <div class="trpane-head"><span class="dot"></span>Terminal 6 · <b>Kairo</b><span class="role">ops</span></div>
-              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-6</div><div class="c-mute">agent: Kairo · running</div><div><span class="c-el">▶</span> queuing Meta ad set</div></div>
+              <div class="trpane-body"><div><span class="c-lime">$</span> attach term-6</div><div class="c-mute mdl">model: <b>anthropic/claude-sonnet-4.6</b></div><div><span class="c-el">▶</span> queuing Meta ad set</div></div>
               <div class="trpane-input"><span class="seg on">✦ Agent</span><span class="seg">⌘ Shell</span><span class="ph">message Kairo…</span></div>
             </div>
           </div>
